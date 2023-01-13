@@ -1,0 +1,59 @@
+version: "3.3"
+services:
+  database:
+    image: "veresnikov/mysql:1.0.0"
+    container_name: database
+    env_file:
+      - "./config/mysql/.env"
+    ports:
+      - "3306:3306"
+    volumes:
+      - "./config/mysql/init.sql:/db_conf/init.sql:ro"
+      - "./data/mysql:/var/lib/mysql"
+    networks:
+      default:
+        aliases:
+          - database
+    healthcheck:
+      test: mysql -h127.0.0.1 -uroot -p1234 -e 'SELECT 1'
+      interval: 1s
+      timeout: 3s
+
+  frontend:
+    build:
+      dockerfile: "../client/Dockerfile"
+      context: "../client"
+    container_name: frontend
+    user: $USER_ID:$GROUP_ID
+    volumes:
+      - "/home:/home"
+      - "/etc/passwd:/etc/passwd:ro"
+      - "/etc/group:/etc/group:ro"
+      - "/etc/shadow:/etc/shadow:ro"
+      - "../client:/app"
+
+  backend:
+    build:
+      dockerfile: "../server/Dockerfile"
+      context: "../server"
+    user: $USER_ID:$GROUP_ID
+    container_name: backend
+    volumes:
+      - "/home:/home"
+      - "/etc/passwd:/etc/passwd:ro"
+      - "/etc/group:/etc/group:ro"
+      - "/etc/shadow:/etc/shadow:ro"
+      - "../server:/app"
+    depends_on:
+      - database
+
+  router:
+    image: "nginx:1.23.3"
+    container_name: router
+    volumes:
+      - "./config/router/nginx.conf:/etc/nginx/nginx.conf:ro"
+    ports:
+      - "80:80"
+    depends_on:
+      - frontend
+      - backend

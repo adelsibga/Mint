@@ -1,0 +1,47 @@
+@import 'src/style/config/Fonts';
+
+.container {
+  &_error {
+    min-height: 70.4vh;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 50px 0 100px;
+  }
+}
+
+.error {
+  &__img {
+    width: 400px;
+    height: 300px;
+    background-size: cover;
+  }
+
+  &__title {
+    font: 700 60px/1.2 $circeArial;
+    margin: 0;
+    color: #FFFFFF;
+  }
+
+  &__text {
+    font: 400 25px/1.5 $circeArial;
+    max-width: 575px;
+    margin: 0;
+    color: #FFFFFF;
+  }
+
+  &__link {
+    font: 400 25px/1.5 $circeArial;
+    margin: 0;
+    color: #20B4AB;
+    transition: all 0.3s ease;
+
+    &:hover,
+    &:focus,
+    &:active {
+      transition: all 0.3s ease;
+      color: #26B78C;
+    }
+  }
+}

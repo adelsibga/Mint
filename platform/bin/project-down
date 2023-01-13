@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+PLATFORM_ROOT="$(dirname "$(dirname "$(readlink -fm "$0")")")"
+
+export USER_ID=$(id -u)
+export GROUP_ID=$(id -g)
+
+pushd "$PLATFORM_ROOT" > /dev/null || exit
+
+docker compose down
+
+popd > /dev/null || exit

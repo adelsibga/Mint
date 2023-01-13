@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -o errexit
+
+install_modules() {
+  echo "Install modules"
+  npm install --save-dev || exit 1
+}
+
+serve() {
+  echo "Serve application"
+  npm start || exit 1
+}
+
+install_modules
+
+if [[ "$1" == "serve" ]]; then
+    serve
+fi

@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+PLATFORM_ROOT="$(dirname "$(dirname "$(readlink -fm "$0")")")"
+
+export USER_ID=$(id -u)
+export GROUP_ID=$(id -g)
+
+pushd "$PLATFORM_ROOT" > /dev/null || exit
+
+docker compose up -d database
+
+"$PLATFORM_ROOT/bin/wait-for-containers" database || exit
+
+docker compose up -d
+
+popd > /dev/null || exit
