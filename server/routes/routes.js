@@ -1,12 +1,8 @@
-const {Router} = require('express')
-const http = require('http')
-const routePrefix = () => {return '/backend'}
-const router = Router({
-    strict: routePrefix()
-})
+module.exports = (app) => {
+    app.get('/alive', (req, res) => {
+        res.status(200)
+        res.send('OK')
+    })
 
-router.get('/alive', (req, res) => {
-    res.status(204)
-})
-
-module.exports = router
+    return app
+}
