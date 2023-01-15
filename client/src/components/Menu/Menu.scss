@@ -1,0 +1,147 @@
+@import './src/style/config/Fonts';
+
+.container {
+  &_menu {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 80px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 10px 15px;
+  }
+}
+
+.menu {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: rgba(21, 21, 21, 0.87);
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  &__link {
+    font: 700 16px/1.5 $circeArial;
+    margin-right: 20px;
+    color: #FFFFFF;
+  }
+
+  &__logo {
+    position: relative;
+    width: 161px;
+    height: 60px;
+    margin-right: 70px;
+
+    &:before {
+      position: absolute;
+      width: 161px;
+      height: 60px;
+      content: '';
+      background: url('../../../assets/images/menu/mint-logo.svg') center center no-repeat;
+    }
+  }
+}
+
+.btn {
+  &_download {
+    font: 700 16px/1 $circeArial;
+    max-width: 185px;
+    max-height: 35px;
+    padding: 10px;
+    transition: all 0.3s ease;
+    color: #FFFFFF;
+    border-radius: 3px;
+    background: linear-gradient(101.05deg, #20B4AB 10.15%, #26B78C 91.7%);
+
+    &:hover,
+    &:visited,
+    &:active {
+      transition: all 0.3s ease;
+      outline: none;
+      background: linear-gradient(100.73deg, #26B78C 10.15%, #20B4AB 91.7%);
+    }
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .container {
+    &_menu {
+      width: 540px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    &_menu {
+      width: 720px;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    &_menu {
+      width: 960px;
+    }
+  }
+}
+
+@media screen and (min-width: 1240px) {
+  .container {
+    &_menu {
+      width: 1200px;
+    }
+  }
+
+  .menu {
+    &__logo {
+      margin-right: 130px;
+    }
+
+    &__link {
+      margin-right: 32px;
+    }
+
+    &__member {
+      position: relative;
+      width: 96px;
+      height: 30px;
+
+      &:before {
+        position: absolute;
+        width: 96px;
+        height: 30px;
+        content: '';
+        background: url('../../../assets/images/menu/sk.svg') center center no-repeat;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .container {
+    &_menu {
+      width: 1400px;
+    }
+  }
+}

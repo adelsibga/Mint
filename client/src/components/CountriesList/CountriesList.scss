@@ -1,0 +1,19 @@
+@import './src/style/config/Fonts';
+
+.countries-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.country {
+  font: 700 16px/1.27 $circeArial;
+  color: #FFFFFF;
+
+  &:nth-of-type(n-1) {
+    margin: 0 0 25px;
+  }
+}
+
+.country.active {
+  font-size: 32px;
+}

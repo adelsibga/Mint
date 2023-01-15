@@ -1,0 +1,14 @@
+.institutions {
+
+  &__map {
+    background: radial-gradient(49.93% 49.93% at 59.52% 50.07%, #024E5E 0%, #151515 84.83%);
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.map {
+  width: 80%;
+}

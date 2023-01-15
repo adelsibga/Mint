@@ -1,0 +1,60 @@
+@import '../src/style/config/Fonts.scss';
+
+$background-color: #151515;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: 400 16px/1.5 $circeArial;
+}
+
+ul {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.app {
+  padding-top: 80px;
+  background-color: $background-color;
+}
+
+.container {
+  min-width: 320px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    width: 1000px;
+  }
+}
+
+@media screen and (min-width: 1240px) {
+  .container {
+    width: 1200px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .container {
+    width: 1400px;
+  }
+}

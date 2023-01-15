@@ -1,0 +1,188 @@
+.container {
+  &_footer {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 30px;
+  }
+}
+
+.footer {
+  &__content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__connect {
+    padding-right: 15px;
+  }
+
+  &__about,
+  &__member {
+    padding: 0 15px;
+  }
+
+  &__law-info {
+    font-size: 12px;
+    margin: 20px 0 0;
+    text-align: center;
+    color: #FFFFFF;
+
+    &_transfer {
+      display: none;
+    }
+  }
+
+  &__social-media {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+  }
+
+  &__media-wrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.connect,
+.about {
+  &__link {
+    line-height: 1.5;
+    display: block;
+    margin: 0 0 15px;
+    text-decoration: none;
+    color: #FFFFFF;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 20px;
+    color: #20B4AB;
+  }
+}
+
+.member {
+  &__title {
+    font-size: 20px;
+    position: relative;
+    margin: 0 0 20px;
+    color: #FFFFFF;
+
+    &::before {
+      position: absolute;
+      top: -5px;
+      left: -45px;
+      width: 40px;
+      height: 40px;
+      content: '';
+      background: url('/../assets/images/footer/sk-logo.svg');
+    }
+  }
+}
+
+.social-media {
+  &__mail {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: #20B4AB;
+  }
+}
+
+.vk,
+.telegram {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    content: '';
+  }
+}
+
+.vk {
+  &::before {
+    left: -100px;
+    width: 30px;
+    height: 17px;
+    background: url('/../assets/images/footer/vk.svg');
+  }
+}
+
+.telegram {
+  &::before {
+    left: -25px;
+    width: 26px;
+    height: 26px;
+    background: url('/../assets/images/footer/telegram.svg');
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .container {
+    &__footer {
+      display: block;
+    }
+  }
+}
+
+@media screen and (max-width: 699px) {
+  .container {
+    &_footer {
+      display: unset;
+    }
+  }
+
+  .footer {
+    &__social-media {
+      align-items: unset;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 0 15px;
+    }
+
+    &__law-info {
+      &_transfer {
+        display: block;
+      }
+    }
+  }
+
+  .social-media {
+    &__mail {
+      margin-bottom: unset;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .footer {
+    &__connect,
+    &__about,
+    &__member {
+      width: 280px;
+    }
+  }
+}
+
+@media screen and (max-width: 1239px) {
+  .footer {
+    &__connect {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 1239px) {
+  .member {
+    &__title {
+      margin-left: 45px;
+    }
+  }
+}

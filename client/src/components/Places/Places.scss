@@ -1,0 +1,22 @@
+@import './src/style/config/Fonts';
+
+.places {
+  &__title {
+    font: 700 55px/1.2 $circeArial;
+    margin: 0 0 90px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  &__country {
+    font: 700 40px/1.2 $circeArial;
+    margin: 0;
+    color: #FFFFFF;
+  }
+
+  &-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 90px;
+  }
+}
